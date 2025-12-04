@@ -30,6 +30,7 @@ export function Hero() {
                         src={PORTFOLIO_DATA.personal.profilePic}
                         alt={PORTFOLIO_DATA.personal.name}
                         fill
+                        priority
                         className="object-cover"
                     />
                 </motion.div>

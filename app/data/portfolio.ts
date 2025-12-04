@@ -2,7 +2,7 @@ export const PORTFOLIO_DATA = {
     personal: {
         name: "Sourav Dutta",
         title: "Full Stack Developer",
-        email: "hello@dsourav.com",
+        email: "hello@sourav.dev",
         location: "Kolkata, West Bengal, India",
         bio: "I craft digital experiences that merge functionality with aesthetics. Specializing in the MERN stack, I build robust applications and useful tools that solve real problems.",
         resumeUrl: process.env.NEXT_PUBLIC_RESUME_URL || "#",
