@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -71,7 +72,32 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body className="antialiased">{children}</body>
+            <body className="antialiased">
+                <Script
+                    id="site-behaviour-analytics"
+                    strategy="afterInteractive"
+                >
+                    {`
+                    (function() {
+                        try {
+                        if(window.location && window.location.search && window.location.search.indexOf('capture-sitebehaviour-heatmap') !== -1) {
+                            sessionStorage.setItem('capture-sitebehaviour-heatmap', '_');
+                        }
+                    
+                        var sbSiteSecret = 'e9f2e8b3-b8fe-4b98-94bf-ca40b7bfc32f';
+                        window.sitebehaviourTrackingSecret = sbSiteSecret;
+                        var scriptElement = document.createElement('script');
+                        scriptElement.defer = true;
+                        scriptElement.id = 'site-behaviour-script-v2';
+                        scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
+                        document.head.appendChild(scriptElement); 
+                        }
+                        catch (e) {console.error(e)}
+                    })()
+                    `}
+                </Script>
+                {children}
+            </body>
         </html>
     );
 }
