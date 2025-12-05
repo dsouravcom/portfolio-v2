@@ -102,7 +102,7 @@ export const PORTFOLIO_DATA = {
             title: "Intro Skipper",
             description:
                 "A browser extension that automatically detects and skips intro sequences on popular streaming platforms, saving you time during binge-watching sessions.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1751618667/intro-skipper.png",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764920395/intro-skipper/meta.webp",
             demoLink: "https://introskipper.dsourav.com",
             codeLink: "https://github.com/dsouravcom/intro-skipper-ext",
             tags: ["Browser Extension", "JavaScript", "DOM Manipulation"],
