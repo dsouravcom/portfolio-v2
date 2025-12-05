@@ -112,7 +112,7 @@ export const PORTFOLIO_DATA = {
             title: "URL Shortener",
             description:
                 "A powerful URL shortening service with analytics. Track clicks, geographic data, and manage your links through an intuitive dashboard.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764939171/sorti-meta-image.webp",
             demoLink: "https://www.sorti.in",
             codeLink: "https://github.com/dsouravcom/url-shortner",
             tags: ["MERN Stack", "Analytics"],
