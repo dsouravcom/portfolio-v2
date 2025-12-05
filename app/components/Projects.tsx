@@ -4,6 +4,7 @@ import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
+import { Tooltip } from "./ui/Tooltip";
 
 export function Projects() {
     return (
@@ -63,26 +64,28 @@ export function Projects() {
                                 </div>
                                 <div className="flex gap-3">
                                     {project.codeLink && (
-                                        <a
-                                            href={project.codeLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
-                                            title="View Code"
-                                        >
-                                            <Github size={18} />
-                                        </a>
+                                        <Tooltip content="View Code">
+                                            <a
+                                                href={project.codeLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors block"
+                                            >
+                                                <Github size={18} />
+                                            </a>
+                                        </Tooltip>
                                     )}
                                     {project.demoLink && (
-                                        <a
-                                            href={project.demoLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
-                                            title="Live Demo"
-                                        >
-                                            <ArrowUpRight size={18} />
-                                        </a>
+                                        <Tooltip content="Live Demo">
+                                            <a
+                                                href={project.demoLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors block"
+                                            >
+                                                <ArrowUpRight size={18} />
+                                            </a>
+                                        </Tooltip>
                                     )}
                                 </div>
                             </div>

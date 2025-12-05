@@ -3,6 +3,7 @@
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Tooltip } from "./ui/Tooltip";
 
 export function Skills() {
     return (
@@ -27,17 +28,16 @@ export function Skills() {
                             transition={{ delay: index * 0.05 }}
                             className="flex flex-col items-center gap-3 group"
                         >
-                            <div className="relative w-12 h-12 md:w-16 md:h-16 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
-                                <Image
-                                    src={skill.icon}
-                                    alt={skill.name}
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">
-                                {skill.name}
-                            </span>
+                            <Tooltip content={skill.name}>
+                                <div className="relative w-12 h-12 md:w-16 md:h-16 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 cursor-pointer">
+                                    <Image
+                                        src={skill.icon}
+                                        alt={skill.name}
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                            </Tooltip>
                         </motion.div>
                     ))}
                 </div>

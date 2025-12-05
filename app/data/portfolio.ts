@@ -40,7 +40,7 @@ export const PORTFOLIO_DATA = {
         { name: "Node.js", icon: "https://img.icons8.com/color/48/nodejs.png" },
         {
             name: "Express.js",
-            icon: "https://img.icons8.com/nolan/64/express-js.png",
+            icon: "https://img.icons8.com/color/48/express-js.png",
         },
         { name: "React", icon: "https://img.icons8.com/office/48/react.png" },
         {
@@ -79,33 +79,23 @@ export const PORTFOLIO_DATA = {
     ],
     projects: [
         {
+            title: "Caption Extractor",
+            description:
+                "A utility to extract and download captions from Instagram posts. Perfect for content creators and social media managers.",
+            image: "https://caption.dsourav.com/og-image.webp",
+            demoLink: "https://caption.dsourav.com",
+            codeLink: "https://github.com/dsouravcom/insta-caption-extractor",
+            tags: ["Scraping", "Instagram", "Tool"],
+            category: "Web App",
+        },
+        {
             title: "Daily Journal",
             description:
                 "A secure and private journaling application designed for personal reflection. Features include rich text editing, mood tracking, and encrypted storage.",
             image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1707309141/rojlekho.com.jpg",
             demoLink: "https://app.rojlekho.com",
             codeLink: "https://github.com/dsouravcom/rojlekho",
-            tags: ["MERN Stack", "Security", "Journaling", "Redux"],
-            category: "Web App",
-        },
-        {
-            title: "To Do App",
-            description:
-                "A streamlined productivity tool for managing daily tasks. Built with a focus on user experience and simplicity, featuring drag-and-drop organization.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1713279651/s4kyodmz24trzn3geyv6.png",
-            demoLink: "https://todo.dsourav.com",
-            codeLink: "https://github.com/dsouravcom/todo-app",
-            tags: ["React", "Productivity", "State Management"],
-            category: "Web App",
-        },
-        {
-            title: "URL Shortener",
-            description:
-                "A powerful URL shortening service with analytics. Track clicks, geographic data, and manage your links through an intuitive dashboard.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png",
-            demoLink: "https://www.sorti.in",
-            codeLink: "https://github.com/dsouravcom/url-shortner",
-            tags: ["Node.js", "MongoDB", "API", "Analytics"],
+            tags: ["MERN Stack", "Security", "Journaling", "Razorpay"],
             category: "Web App",
         },
         {
@@ -119,34 +109,46 @@ export const PORTFOLIO_DATA = {
             category: "Extension",
         },
         {
+            title: "URL Shortener",
+            description:
+                "A powerful URL shortening service with analytics. Track clicks, geographic data, and manage your links through an intuitive dashboard.",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png",
+            demoLink: "https://www.sorti.in",
+            codeLink: "https://github.com/dsouravcom/url-shortner",
+            tags: ["MERN Stack", "Analytics"],
+            category: "Web App",
+        },
+        
+        {
             title: "Mail Sender Bot",
             description:
                 "An automated mailing solution for sending bulk emails or files. Useful for newsletters, notifications, and file sharing workflows.",
             image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764874881/mail-sender-bot.webp",
             demoLink: "https://mail.dsourav.com",
             codeLink: "https://github.com/dsouravcom/mail-sender-bot",
-            tags: ["Node.js", "Nodemailer", "Automation"],
-            category: "Tool",
+            tags: ["React", "Nodemailer", "Gmail API"],
+            category: "Web App",
         },
         {
             title: "URL Expander",
             description:
                 "A security tool to reveal the destination of shortened URLs before clicking. Protects against phishing and malicious links.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1713280136/wryfaepgfulud7wltyie.png",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764871126/urlexpander-meta-image.webp",
             demoLink: "https://url.dsourav.com",
             codeLink: "https://github.com/dsouravcom/url-expander",
             tags: ["Security", "API", "Utility"],
-            category: "Tool",
+            category: "Web App",
         },
         {
-            title: "Caption Extractor",
+            title: "To Do App",
             description:
-                "A utility to extract and download captions from Instagram posts. Perfect for content creators and social media managers.",
-            image: "https://caption.dsourav.com/og-image.webp",
-            demoLink: "https://caption.dsourav.com",
-            codeLink: "https://github.com/dsouravcom/insta-caption-extractor",
-            tags: ["Scraping", "Instagram", "Tool"],
-            category: "Tool",
+                "A streamlined productivity tool for managing daily tasks. Built with a focus on user experience and simplicity, featuring drag-and-drop organization.",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1713279651/s4kyodmz24trzn3geyv6.png",
+            demoLink: "https://todo.dsourav.com",
+            codeLink: "https://github.com/dsouravcom/todo-app",
+            tags: ["React", "Productivity", "State Management", "Google Login"],
+            category: "Web App",
         },
+        
     ],
 };
