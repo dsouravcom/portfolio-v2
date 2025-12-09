@@ -92,7 +92,7 @@ export const PORTFOLIO_DATA = {
             title: "Daily Journal",
             description:
                 "A secure and private journaling application designed for personal reflection. Features include rich text editing, mood tracking, and encrypted storage.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1707309141/rojlekho.com.jpg",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1765304511/rojlekho/og-image.webp",
             demoLink: "https://app.rojlekho.com",
             codeLink: "https://github.com/dsouravcom/rojlekho",
             tags: ["MERN Stack", "Security", "Journaling", "Razorpay"],
@@ -139,16 +139,16 @@ export const PORTFOLIO_DATA = {
             tags: ["Security", "API", "Utility"],
             category: "Web App",
         },
-        {
-            title: "To Do App",
-            description:
-                "A streamlined productivity tool for managing daily tasks. Built with a focus on user experience and simplicity, featuring drag-and-drop organization.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1713279651/s4kyodmz24trzn3geyv6.png",
-            demoLink: "https://todo.dsourav.com",
-            codeLink: "https://github.com/dsouravcom/todo-app",
-            tags: ["React", "Productivity", "State Management", "Google Login"],
-            category: "Web App",
-        },
+        // {
+        //     title: "To Do App",
+        //     description:
+        //         "A streamlined productivity tool for managing daily tasks. Built with a focus on user experience and simplicity, featuring drag-and-drop organization.",
+        //     image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1713279651/s4kyodmz24trzn3geyv6.png",
+        //     demoLink: "https://todo.dsourav.com",
+        //     codeLink: "https://github.com/dsouravcom/todo-app",
+        //     tags: ["React", "Productivity", "State Management", "Google Login"],
+        //     category: "Web App",
+        // },
         
     ],
 };
