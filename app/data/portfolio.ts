@@ -94,7 +94,7 @@ export const PORTFOLIO_DATA = {
                 "A secure and private journaling application designed for personal reflection. Features include rich text editing, mood tracking, and encrypted storage.",
             image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1765304511/rojlekho/og-image.webp",
             demoLink: "https://rojlekho.com?ref=sourav.dev",
-            codeLink: "https://github.com/dsouravcom/rojlekho",
+            codeLink: "https://github.com/dsouravcom",
             tags: ["MERN Stack", "Security", "Journaling", "Razorpay", "Lemonsqueezy", "Clerk Authentication"],
             category: "Web App",
         },
