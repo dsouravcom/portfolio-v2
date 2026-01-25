@@ -20,6 +20,9 @@ export const metadata: Metadata = {
         "Sourav Dutta",
     ],
     authors: [{ name: "Sourav Dutta", url: "https://sourav.dev" }],
+    alternates: {
+        canonical: "https://sourav.dev",
+    },
     creator: "Sourav Dutta",
     openGraph: {
         type: "website",
@@ -44,7 +47,15 @@ export const metadata: Metadata = {
         description:
             "Portfolio of Sourav Dutta, a Full Stack Developer specializing in MERN stack.",
         creator: "@souravdotdev",
-        images: ["/og-image.webp"],
+        site: "@souravdotdev",
+        images: [
+            {
+                url: "/og-image.webp", // You should add an og-image.webp to your public folder
+                width: 1200,
+                height: 630,
+                alt: "Sourav Dutta Portfolio",
+            },
+        ],
     },
     robots: {
         index: true,
