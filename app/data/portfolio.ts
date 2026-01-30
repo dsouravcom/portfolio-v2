@@ -129,26 +129,13 @@ export const PORTFOLIO_DATA = {
             category: "Web App",
         },
         {
-            title: "Mail Sender Bot",
+            title: "PocketUtils",
             description:
-                "An automated mailing solution for sending bulk emails or files. Useful for newsletters, notifications, and file sharing workflows.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764874881/mail-sender-bot.webp",
-            demoLink: "https://mail.dsourav.com",
-            codeLink: "https://github.com/dsouravcom/mail-sender-bot",
-            tags: ["React", "Nodemailer", "Gmail API"],
+                "PocketUtils is a simple web app that offers a collection of small, useful online tools for everyday tasks. It helps users quickly convert files, format text, analyze data, and handle common developer or productivity needs — all directly in the browser.",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1769799738/Pocketutils/pocketutils-og-image.webp",
+            demoLink: "https://pocketutils.com/?ref=sourav.dev",
+            tags: ["Utility", "Tools", "Magic Link authentication", "Active session management"],
             category: "Web App",
         },
-        
-        // {
-        //     title: "To Do App",
-        //     description:
-        //         "A streamlined productivity tool for managing daily tasks. Built with a focus on user experience and simplicity, featuring drag-and-drop organization.",
-        //     image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1713279651/s4kyodmz24trzn3geyv6.png",
-        //     demoLink: "https://todo.dsourav.com",
-        //     codeLink: "https://github.com/dsouravcom/todo-app",
-        //     tags: ["React", "Productivity", "State Management", "Google Login"],
-        //     category: "Web App",
-        // },
-        
     ],
 };
