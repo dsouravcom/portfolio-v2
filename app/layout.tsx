@@ -82,6 +82,15 @@ export default function RootLayout({
                     href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
                     rel="stylesheet"
                 />
+                <noscript>
+                    <style>{`
+                        [style*="opacity: 0"], [style*="opacity:0"] {
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                            transform: none !important;
+                        }
+                    `}</style>
+                </noscript>
             </head>
             <body className="antialiased">
                 <Script
