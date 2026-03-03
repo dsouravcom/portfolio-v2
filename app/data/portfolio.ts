@@ -1,4 +1,20 @@
-export const PORTFOLIO_DATA = {
+export type Project = {
+    title: string;
+    description: string;
+    image: string;
+    demoLink?: string;
+    codeLink?: string;
+    tags: string[];
+    category: string;
+    slug: string;
+};
+
+export const PORTFOLIO_DATA: {
+    personal: any;
+    socials: any[];
+    skills: any[];
+    projects: Project[];
+} = {
     personal: {
         name: "Sourav Dutta",
         title: "Full Stack Developer",
@@ -85,18 +101,34 @@ export const PORTFOLIO_DATA = {
             image: "https://caption.dsourav.com/og-image.webp",
             demoLink: "https://caption.dsourav.com?ref=sourav.dev",
             codeLink: "https://github.com/dsouravcom/insta-caption-extractor",
-            tags: ["Scraping", "Instagram", "Tool", "Next.js", "Cloudflare Turnstile captcha"],
+            tags: [
+                "Scraping",
+                "Instagram",
+                "Tool",
+                "Next.js",
+                "Cloudflare Turnstile captcha",
+                "Cloudflare Workers",
+            ],
             category: "Web App",
+            slug: "caption-extractor",
         },
         {
             title: "RojLekho (Daily Journal)",
             description:
-                "A secure and private journaling application designed for personal reflection. Features include rich text editing, mood tracking, and encrypted storage.",
+                "A secure and private journaling application designed for personal reflection. Features include rich text editing, encrypted storage, offline support, and journal export.",
             image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1765304511/rojlekho/og-image.webp",
             demoLink: "https://rojlekho.com?ref=sourav.dev",
             codeLink: "https://github.com/dsouravcom",
-            tags: ["MERN Stack", "Security", "Journaling", "Razorpay", "Lemonsqueezy", "Clerk Authentication"],
+            tags: [
+                "MERN Stack",
+                "Security",
+                "Journaling",
+                "Razorpay",
+                "Lemonsqueezy",
+                "Clerk Authentication",
+            ],
             category: "Web App",
+            slug: "rojlekho",
         },
         {
             title: "Intro Skipper",
@@ -107,16 +139,18 @@ export const PORTFOLIO_DATA = {
             codeLink: "https://github.com/dsouravcom/intro-skipper-ext",
             tags: ["Browser Extension", "JavaScript", "DOM Manipulation"],
             category: "Extension",
+            slug: "intro-skipper",
         },
         {
-            title: "URL Shortener",
+            title: "Personal Blog",
             description:
-                "A powerful URL shortening service with analytics. Track clicks, geographic data, and manage your links through an intuitive dashboard.",
-            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764939171/sorti-meta-image.webp",
-            demoLink: "https://www.sorti.in?ref=sourav.dev",
-            codeLink: "https://github.com/dsouravcom/url-shortner",
-            tags: ["MERN Stack", "Analytics"],
+                "A personal blog where I share my thoughts, experiences, and tutorials.",
+            image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1772548277/blog-og-image.png",
+            demoLink: "https://blog.sourav.dev/?ref=sourav.dev",
+            codeLink: "https://github.com/dsouravcom/personal-blog",
+            tags: ["Laravel"],
             category: "Web App",
+            slug: "personal-blog",
         },
         {
             title: "URL Expander",
@@ -125,17 +159,24 @@ export const PORTFOLIO_DATA = {
             image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1764871126/urlexpander-meta-image.webp",
             demoLink: "https://url.dsourav.com?ref=sourav.dev",
             codeLink: "https://github.com/dsouravcom/url-expander",
-            tags: ["Security", "API", "Utility"],
+            tags: ["Next.js", "Security", "API", "Utility"],
             category: "Web App",
+            slug: "url-expander",
         },
         {
             title: "PocketUtils",
             description:
-                "PocketUtils is a simple web app that offers a collection of small, useful online tools for everyday tasks. It helps users quickly convert files, format text, analyze data, and handle common developer or productivity needs — all directly in the browser.",
+                "PocketUtils is a collection of small, useful online tools for everyday tasks. Includes XBEL file decryption, XBEL to HTML conversion, meta scanner, and SSL certificate scanner. All tools run directly in the browser with no data leaving your device.",
             image: "https://res.cloudinary.com/dzjujoqyi/image/upload/v1769799738/Pocketutils/pocketutils-og-image.webp",
             demoLink: "https://pocketutils.com/?ref=sourav.dev",
-            tags: ["Utility", "Tools", "Magic Link authentication", "Active session management"],
+            tags: [
+                "Utility",
+                "Tools",
+                "Magic Link authentication",
+                "Active session management",
+            ],
             category: "Web App",
+            slug: "pocketutils",
         },
     ],
 };

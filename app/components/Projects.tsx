@@ -4,6 +4,7 @@ import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Tooltip } from "./ui/Tooltip";
 
 export function Projects() {
@@ -35,7 +36,10 @@ export function Projects() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="group relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-zinc-200/50 dark:hover:shadow-zinc-900/50 transition-all duration-500 flex flex-col"
                     >
-                        <div className="relative aspect-4/3 overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+                        <Link
+                            href={`/projects/${project.slug}`}
+                            className="block relative aspect-4/3 overflow-hidden bg-zinc-100 dark:bg-zinc-800 cursor-pointer"
+                        >
                             {project.image ? (
                                 <Image
                                     src={project.image}
@@ -50,7 +54,7 @@ export function Projects() {
                                 </div>
                             )}
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
-                        </div>
+                        </Link>
 
                         <div className="p-8 flex flex-col grow">
                             <div className="flex justify-between items-start mb-4">
@@ -58,9 +62,14 @@ export function Projects() {
                                     <span className="text-xs font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-2 block">
                                         {project.category}
                                     </span>
-                                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                        {project.title}
-                                    </h3>
+                                    <Link
+                                        href={`/projects/${project.slug}`}
+                                        className="block"
+                                    >
+                                        <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                            {project.title}
+                                        </h3>
+                                    </Link>
                                 </div>
                                 <div className="flex gap-3">
                                     {project.codeLink && (
