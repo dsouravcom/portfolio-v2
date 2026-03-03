@@ -1,16 +1,14 @@
-"use client";
-
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
-import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { MotionDiv } from "./ui/Motion";
 import { Tooltip } from "./ui/Tooltip";
 
 export function Projects() {
     return (
         <section id="work" className="py-32 px-4 max-w-7xl mx-auto">
-            <motion.div
+            <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -24,11 +22,11 @@ export function Projects() {
                     A showcase of my projects, tools, and experiments. Each
                     piece represents a unique challenge and solution.
                 </p>
-            </motion.div>
+            </MotionDiv>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {PORTFOLIO_DATA.projects.map((project, index) => (
-                    <motion.div
+                    <MotionDiv
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +112,7 @@ export function Projects() {
                                 ))}
                             </div>
                         </div>
-                    </motion.div>
+                    </MotionDiv>
                 ))}
             </div>
         </section>

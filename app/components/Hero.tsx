@@ -1,9 +1,7 @@
-"use client";
-
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
-import { motion } from "framer-motion";
 import { ArrowDown, MoveRight } from "lucide-react";
 import Image from "next/image";
+import { MotionDiv } from "./ui/Motion";
 
 export function Hero() {
     return (
@@ -14,13 +12,13 @@ export function Hero() {
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-200/20 dark:bg-purple-900/10 rounded-full blur-3xl animate-pulse delay-1000" />
             </div>
 
-            <motion.div
+            <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-4xl space-y-8 flex flex-col items-center"
             >
-                <motion.div
+                <MotionDiv
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
@@ -33,7 +31,7 @@ export function Hero() {
                         priority
                         className="object-cover"
                     />
-                </motion.div>
+                </MotionDiv>
 
                 <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-100">
                     {PORTFOLIO_DATA.personal.name}
@@ -46,7 +44,7 @@ export function Hero() {
                     {PORTFOLIO_DATA.personal.bio}
                 </p>
 
-                <motion.div
+                <MotionDiv
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
@@ -70,17 +68,17 @@ export function Hero() {
                     >
                         Download Resume
                     </a>
-                </motion.div>
-            </motion.div>
+                </MotionDiv>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-10 animate-bounce"
             >
                 <ArrowDown className="text-zinc-400" size={24} />
-            </motion.div>
+            </MotionDiv>
         </section>
     );
 }

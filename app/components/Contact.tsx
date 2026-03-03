@@ -1,8 +1,6 @@
-"use client";
-
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
-import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
+import { MotionDiv } from "./ui/Motion";
 
 export function Contact() {
     return (
@@ -10,7 +8,7 @@ export function Contact() {
             id="contact"
             className="py-24 px-4 max-w-4xl mx-auto text-center"
         >
-            <motion.div
+            <MotionDiv
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -47,7 +45,7 @@ export function Contact() {
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </MotionDiv>
         </section>
     );
 }

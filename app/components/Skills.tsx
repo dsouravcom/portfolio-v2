@@ -1,26 +1,24 @@
-"use client";
-
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { MotionDiv, MotionH3 } from "./ui/Motion";
 import { Tooltip } from "./ui/Tooltip";
 
 export function Skills() {
     return (
         <section className="py-20 border-y border-zinc-100 dark:border-zinc-800 overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
             <div className="max-w-6xl mx-auto px-4">
-                <motion.h3
+                <MotionH3
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     className="text-center text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-12"
                 >
                     Technologies I Work With
-                </motion.h3>
+                </MotionH3>
 
                 <div className="flex gap-8 md:gap-12 items-center justify-center flex-wrap">
                     {PORTFOLIO_DATA.skills.map((skill, index) => (
-                        <motion.div
+                        <MotionDiv
                             key={skill.name}
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +36,7 @@ export function Skills() {
                                     />
                                 </div>
                             </Tooltip>
-                        </motion.div>
+                        </MotionDiv>
                     ))}
                 </div>
             </div>

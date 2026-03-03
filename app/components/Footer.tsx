@@ -1,5 +1,3 @@
-"use client";
-
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 
 export function Footer() {

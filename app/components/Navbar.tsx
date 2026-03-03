@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { MotionNav } from "./ui/Motion";
 
 const navItems = [
     { name: "Home", href: "/" },
@@ -12,7 +10,7 @@ const navItems = [
 
 export function Navbar() {
     return (
-        <motion.nav
+        <MotionNav
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -56,6 +54,6 @@ export function Navbar() {
                     </Link>
                 </div>
             </div>
-        </motion.nav>
+        </MotionNav>
     );
 }

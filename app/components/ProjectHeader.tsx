@@ -1,10 +1,8 @@
-"use client";
-
 import { Project } from "@/app/data/portfolio";
-import { motion } from "framer-motion";
-import { ArrowUpRight, Github, ChevronLeft } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { MotionDiv } from "./ui/Motion";
 
 export function ProjectHeader({ project }: { project: Project }) {
     if (!project) return null;
@@ -12,7 +10,7 @@ export function ProjectHeader({ project }: { project: Project }) {
     return (
         <section className="pt-24 pb-12">
             <div className="max-w-4xl mx-auto px-6">
-                <motion.div
+                <MotionDiv
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
@@ -21,12 +19,15 @@ export function ProjectHeader({ project }: { project: Project }) {
                         href="/#work"
                         className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mb-8 group"
                     >
-                        <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                        <ChevronLeft
+                            size={20}
+                            className="group-hover:-translate-x-1 transition-transform"
+                        />
                         Back to projects
                     </Link>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -64,9 +65,9 @@ export function ProjectHeader({ project }: { project: Project }) {
                             </Link>
                         )}
                     </div>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
@@ -82,9 +83,9 @@ export function ProjectHeader({ project }: { project: Project }) {
                             sizes="(max-width: 1200px) 100vw, 1200px"
                         />
                     )}
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -98,7 +99,7 @@ export function ProjectHeader({ project }: { project: Project }) {
                             {tag}
                         </span>
                     ))}
-                </motion.div>
+                </MotionDiv>
             </div>
         </section>
     );
