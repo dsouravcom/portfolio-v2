@@ -6,6 +6,8 @@ export type Project = {
     codeLink?: string;
     tags: string[];
     category: string;
+    /** Short highlight surfaced on the card (traction, a defining trait, etc.). */
+    metric?: string;
     slug: string;
 };
 
@@ -110,6 +112,7 @@ export const PORTFOLIO_DATA: {
                 "Cloudflare Workers",
             ],
             category: "Web App",
+            metric: "1K+ users / month",
             slug: "caption-extractor",
         },
         {
@@ -128,6 +131,7 @@ export const PORTFOLIO_DATA: {
                 "Clerk Authentication",
             ],
             category: "Web App",
+            metric: "End-to-end encrypted",
             slug: "rojlekho",
         },
         {
@@ -139,6 +143,7 @@ export const PORTFOLIO_DATA: {
             codeLink: "https://github.com/dsouravcom/intro-skipper-ext",
             tags: ["Browser Extension", "JavaScript", "DOM Manipulation"],
             category: "Extension",
+            metric: "300+ users",
             slug: "intro-skipper",
         },
         {
@@ -150,6 +155,7 @@ export const PORTFOLIO_DATA: {
             codeLink: "https://github.com/dsouravcom/personal-blog",
             tags: ["Laravel"],
             category: "Web App",
+            metric: "Writing & tutorials",
             slug: "personal-blog",
         },
         {
@@ -161,6 +167,7 @@ export const PORTFOLIO_DATA: {
             codeLink: "https://github.com/dsouravcom/url-expander",
             tags: ["Next.js", "Security", "API", "Utility"],
             category: "Web App",
+            metric: "100+ users / month",
             slug: "url-expander",
         },
         {
@@ -176,6 +183,7 @@ export const PORTFOLIO_DATA: {
                 "Active session management",
             ],
             category: "Web App",
+            metric: "100% client-side",
             slug: "pocketutils",
         },
     ],

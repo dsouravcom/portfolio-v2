@@ -3,7 +3,7 @@ import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "RojLekho - Daily Journal | Sourav Dutta",
+    title: "RojLekho — Daily Journal",
     description:
         "A secure and private journaling application designed for personal reflection.",
 };
@@ -12,15 +12,15 @@ const project = PORTFOLIO_DATA.projects.find((p) => p.slug === "rojlekho")!;
 
 export default function Page() {
     return (
-        <main className="bg-white dark:bg-zinc-950 min-h-screen">
+        <main className="min-h-screen bg-canvas">
             <ProjectHeader project={project} />
 
-            <div className="max-w-4xl mx-auto px-6 pb-24">
+            <div className="mx-auto max-w-4xl px-6 pb-24">
                 <section className="mb-16">
-                    <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
+                    <h2 className="mb-6 text-2xl font-semibold tracking-tight text-ink">
                         Why I built this
                     </h2>
-                    <div className="prose dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <div className="max-w-none leading-relaxed text-muted">
                         <p className="text-lg">
                             I wanted a place to write my thoughts and reflect
                             without any distractions. Most journaling apps feel

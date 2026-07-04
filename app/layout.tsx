@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { CommandPalette } from "./components/CommandPalette";
+import { ScrollProgress } from "./components/ScrollProgress";
+import { themeInitScript } from "./lib/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://sourav.dev"),
     title: {
         default: "Sourav Dutta | Full Stack Developer",
         template: "%s | Sourav Dutta",
@@ -76,8 +80,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <head>
+                {/* Set the theme class before paint to avoid a flash */}
+                <script
+                    dangerouslySetInnerHTML={{ __html: themeInitScript }}
+                />
                 <link
                     href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
                     rel="stylesheet"
@@ -116,7 +124,9 @@ export default function RootLayout({
                     })()
                     `}
                 </Script>
+                <ScrollProgress />
                 {children}
+                <CommandPalette />
             </body>
         </html>
     );

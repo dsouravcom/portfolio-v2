@@ -1,42 +1,48 @@
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 import Image from "next/image";
-import { MotionDiv, MotionH3 } from "./ui/Motion";
-import { Tooltip } from "./ui/Tooltip";
+import { Reveal } from "./ui/Reveal";
+
+const fadeMask =
+    "linear-gradient(to right, transparent, #000 6%, #000 94%, transparent)";
 
 export function Skills() {
-    return (
-        <section className="py-20 border-y border-zinc-100 dark:border-zinc-800 overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
-            <div className="max-w-6xl mx-auto px-4">
-                <MotionH3
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="text-center text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-12"
-                >
-                    Technologies I Work With
-                </MotionH3>
+    // Duplicated once so translateX(-50%) loops seamlessly.
+    const row = [...PORTFOLIO_DATA.skills, ...PORTFOLIO_DATA.skills];
 
-                <div className="flex gap-8 md:gap-12 items-center justify-center flex-wrap">
-                    {PORTFOLIO_DATA.skills.map((skill, index) => (
-                        <MotionDiv
-                            key={skill.name}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            className="flex flex-col items-center gap-3 group"
+    return (
+        <section className="border-y border-line bg-canvas-subtle/50 py-16 md:py-20">
+            <Reveal className="mb-10 text-center">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-faint">
+                    The stack I reach for
+                </p>
+            </Reveal>
+
+            <div
+                className="marquee relative overflow-hidden"
+                style={{ maskImage: fadeMask, WebkitMaskImage: fadeMask }}
+            >
+                <div
+                    className="marquee-track flex w-max gap-3"
+                    style={{ ["--marquee-duration" as string]: "48s" }}
+                >
+                    {row.map((skill, i) => (
+                        <div
+                            key={`${skill.name}-${i}`}
+                            className="group flex shrink-0 items-center gap-2.5 rounded-full border border-line bg-surface px-4 py-2.5 transition-colors duration-200 hover:border-line-strong"
                         >
-                            <Tooltip content={skill.name}>
-                                <div className="relative w-12 h-12 md:w-16 md:h-16 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 cursor-pointer">
-                                    <Image
-                                        src={skill.icon}
-                                        alt={skill.name}
-                                        fill
-                                        className="object-contain"
-                                    />
-                                </div>
-                            </Tooltip>
-                        </MotionDiv>
+                            <span className="relative h-5 w-5 shrink-0">
+                                <Image
+                                    src={skill.icon}
+                                    alt={skill.name}
+                                    fill
+                                    sizes="20px"
+                                    className="object-contain opacity-80 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                                />
+                            </span>
+                            <span className="whitespace-nowrap font-mono text-sm text-muted transition-colors duration-200 group-hover:text-ink">
+                                {skill.name}
+                            </span>
+                        </div>
                     ))}
                 </div>
             </div>

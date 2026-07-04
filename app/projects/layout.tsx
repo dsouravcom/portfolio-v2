@@ -1,4 +1,5 @@
 import { Footer } from "@/app/components/Footer";
+import { Navbar } from "@/app/components/Navbar";
 
 export default function ProjectsLayout({
     children,
@@ -6,7 +7,8 @@ export default function ProjectsLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="bg-white dark:bg-zinc-950 min-h-screen">
+        <div className="min-h-screen bg-canvas">
+            <Navbar />
             <main className="min-h-[calc(100vh-100px)]">{children}</main>
             <Footer />
         </div>

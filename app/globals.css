@@ -1,34 +1,259 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-}
+/* Class-based dark mode (toggle-driven, not just prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* ------------------------------------------------------------------ *
+ * Design tokens
+ * ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #faf9f7;
+  --canvas-subtle: #efeee9;
+  --surface: #ffffff;
+  --surface-2: #f6f5f1;
+  --line: #dedbd3;
+  --line-strong: #c6c2b8;
+  --ink: #171614;
+  --muted: #514d47;
+  --faint: #837f76;
+  --accent: #567f10;
+  --accent-hi: #3f6b0a;
+  --accent-ink: #f4fce6;
+  --shadow-color: 20 20 24;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Satoshi', sans-serif;
-  --font-display: 'Clash Display', sans-serif;
+.dark {
+  --canvas: #0a0a0c;
+  --canvas-subtle: #16161a;
+  --surface: #1a1a1f;
+  --surface-2: #232329;
+  --line: #33333b;
+  --line-strong: #45454f;
+  --ink: #f5f5f6;
+  --muted: #b0b0ba;
+  --faint: #74747e;
+  --accent: #a3e635;
+  --accent-hi: #bef264;
+  --accent-ink: #131f08;
+  --shadow-color: 0 0 0;
 }
 
+/* Fall back to system preference before any theme is chosen */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light):not(.dark) {
+    --canvas: #0a0a0c;
+    --canvas-subtle: #16161a;
+    --surface: #1a1a1f;
+    --surface-2: #232329;
+    --line: #33333b;
+    --line-strong: #45454f;
+    --ink: #f5f5f6;
+    --muted: #b0b0ba;
+    --faint: #74747e;
+    --accent: #a3e635;
+    --accent-hi: #bef264;
+    --accent-ink: #131f08;
+    --shadow-color: 0 0 0;
   }
 }
 
+/* ------------------------------------------------------------------ *
+ * Theme mapping (Tailwind utilities → tokens)
+ * ------------------------------------------------------------------ */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-canvas-subtle: var(--canvas-subtle);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-hi: var(--accent-hi);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Clash Display", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", "JetBrains Mono",
+    "Cascadia Code", Menlo, monospace;
+
+  /* Emil's stronger custom easing curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* ------------------------------------------------------------------ *
+ * Base
+ * ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--canvas);
+  color: var(--ink);
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 28%, transparent);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 999px;
+  border: 3px solid var(--canvas);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--faint);
+}
+
+/* ------------------------------------------------------------------ *
+ * Utilities
+ * ------------------------------------------------------------------ */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Accent gradient text */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--ink) 0%,
+    var(--ink) 55%,
+    var(--accent) 130%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Dotted grid backdrop */
+.grid-bg {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--ink) 12%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* Cursor spotlight (driven by --mx / --my CSS vars) */
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 300ms var(--ease-out);
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in oklab, var(--accent) 16%, transparent),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Seamless marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-duration, 42s) linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Entrance for elements rendered with @starting-style support */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Live status dot */
+@keyframes ping-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  75%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.ping-ring {
+  animation: ping-ring 2s var(--ease-out) infinite;
+}
+
+/* ------------------------------------------------------------------ *
+ * Reduced motion — keep opacity/color, drop movement
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .ping-ring {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.12s !important;
+  }
 }

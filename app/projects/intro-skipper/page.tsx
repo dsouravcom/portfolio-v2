@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "Intro Skipper | Sourav Dutta",
+    title: "Intro Skipper",
     description:
         "A browser extension to automatically skip intros on streaming platforms.",
 };
@@ -15,15 +15,15 @@ const project = PORTFOLIO_DATA.projects.find(
 
 export default function Page() {
     return (
-        <main className="bg-white dark:bg-zinc-950 min-h-screen">
+        <main className="min-h-screen bg-canvas">
             <ProjectHeader project={project} />
 
-            <div className="max-w-4xl mx-auto px-6 pb-24">
+            <div className="mx-auto max-w-4xl px-6 pb-24">
                 <section className="mb-16">
-                    <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
+                    <h2 className="mb-6 text-2xl font-semibold tracking-tight text-ink">
                         Why I built this
                     </h2>
-                    <div className="prose dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <div className="max-w-none leading-relaxed text-muted">
                         <p className="text-lg">
                             I got tired of clicking "Skip Intro" over and over
                             when I'm watching shows. It's a small thing, but
@@ -43,11 +43,11 @@ export default function Page() {
                 </section>
 
                 <section>
-                    <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
-                        Users Analytics
+                    <h2 className="mb-6 text-2xl font-semibold tracking-tight text-ink">
+                        User analytics
                     </h2>
                     <div className="grid gap-8">
-                        <div className="p-4 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800">
+                        <div className="rounded-2xl border border-line bg-canvas-subtle p-4">
                             <Image
                                 src="https://res.cloudinary.com/dzjujoqyi/image/upload/v1772545302/intro-skipper/user-analytics.png"
                                 alt="User Analytics"
@@ -55,7 +55,7 @@ export default function Page() {
                                 height={450}
                                 className="rounded-2xl"
                             />
-                            <p className="mt-4 text-sm text-zinc-500 text-center italic">
+                            <p className="mt-4 text-center text-sm italic text-faint">
                                 310+ weekly active users saving time every day.
                                 Growing steadily with 16% month-over-month
                                 growth.

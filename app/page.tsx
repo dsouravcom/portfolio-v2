@@ -1,3 +1,4 @@
+import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
@@ -7,10 +8,11 @@ import { Skills } from "./components/Skills";
 
 export default function Home() {
     return (
-        <main className="bg-white dark:bg-zinc-950 min-h-screen selection:bg-blue-100 dark:selection:bg-blue-900/30">
+        <main className="min-h-screen bg-canvas">
             <Navbar />
             <Hero />
             <Skills />
+            <About />
             <Projects />
             <Contact />
             <Footer />
