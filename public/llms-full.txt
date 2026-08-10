@@ -1,0 +1,141 @@
+# Sourav Dutta — Full Stack Developer
+
+> Full-Stack Developer crafting fast, thoughtful web apps from database to pixel that people around the world actually use.
+
+- **Location**: Kolkata, West Bengal, India
+- **Email**: hello@sourav.dev
+- **Portfolio**: https://sourav.dev
+- **Status**: Available for new projects & collaborations
+
+---
+
+## About Sourav Dutta
+
+Sourav Dutta is a full-stack developer who crafts digital experiences that merge functionality with aesthetics. Specializing in the MERN stack and Next.js, he builds robust applications and useful tools that solve real everyday problems.
+
+Key Highlights:
+- **Products Shipped**: 6+ active products
+- **Monthly Active Users**: Serving 1,000+ monthly active users across applications
+- **Focus**: Bias toward simple, fast, privacy-focused, and client-first solutions
+
+### Capabilities & Expertise
+
+- **Frontend**: Interfaces that feel fast, obvious, and delightful.
+  - Technologies: React, Next.js, TypeScript, Tailwind CSS, JavaScript, HTML/CSS
+- **Backend**: Clean APIs, authentication, and database design.
+  - Technologies: Node.js, Express.js, MongoDB, SQL, Java, Python
+- **Tooling & Infrastructure**: Reliable deployment and system operations.
+  - Technologies: Git, Linux, AWS, Firebase, Cloudflare Workers, Cloudflare Turnstile
+
+---
+
+## Technical Skills
+
+- **Languages**: JavaScript, TypeScript, Java, Python, SQL
+- **Frameworks & Libraries**: Next.js, React, Node.js, Express.js, Laravel
+- **Databases & Cloud**: MongoDB, SQL, AWS, Firebase, Cloudflare Workers
+- **Tools & Platforms**: Git, Linux, Razorpay, Lemon Squeezy, Clerk Authentication
+
+---
+
+## Featured Projects
+
+### 1. Caption Extractor
+- **Category**: Web App / Tool
+- **Live Demo**: https://caption.dsourav.com
+- **Source Code**: https://github.com/dsouravcom/insta-caption-extractor
+- **Project Detail Page**: https://sourav.dev/projects/caption-extractor
+- **Metric**: 1,000+ users / month
+- **Tech Stack**: Next.js, Instagram Scraping, Cloudflare Turnstile Captcha, Cloudflare Workers
+- **Description**: A utility to extract and download captions from Instagram posts. Built for content creators and social media managers.
+
+#### Why I Built This
+"I got frustrated trying to copy captions from Instagram reels and posts on my phone. I'd see a caption I liked and want to save it, or use the idea somewhere else. But Instagram doesn't let you select text, so copying feels annoying every single time. So I just built a tool to fix this. It's really simple: paste a link and get the caption. That's it. No confusing stuff. The tool handles all the messy work behind the scenes so you don't have to worry about anything."
+
+---
+
+### 2. RojLekho (Daily Journal)
+- **Category**: Web App
+- **Live Demo**: https://rojlekho.com
+- **Source Code**: https://github.com/dsouravcom
+- **Project Detail Page**: https://sourav.dev/projects/rojlekho
+- **Metric**: End-to-end encrypted
+- **Tech Stack**: MERN Stack, Security, Journaling, Razorpay, Lemon Squeezy, Clerk Authentication
+- **Description**: A secure and private journaling application designed for personal reflection. Features rich text editing, encrypted storage, offline support, and journal export.
+
+#### Why I Built This
+"I wanted a place to write my thoughts and reflect without any distractions. Most journaling apps feel cluttered or try to do too much. I needed something simple, private, and reliable. So I built RojLekho—it means 'Write Daily' in Bengali. It's a journaling app where you can write freely without worrying about privacy. Everything is encrypted and secure. You can write offline, export your journals anytime, and it just gets out of your way so you can focus on your thoughts."
+
+---
+
+### 3. Intro Skipper
+- **Category**: Browser Extension
+- **Live Demo**: https://introskipper.dsourav.com
+- **Source Code**: https://github.com/dsouravcom/intro-skipper-ext
+- **Project Detail Page**: https://sourav.dev/projects/intro-skipper
+- **Metric**: 300+ users (310+ weekly active users, 16% MoM growth)
+- **Tech Stack**: Browser Extension, JavaScript, DOM Manipulation
+- **Description**: A browser extension that automatically detects and skips intro sequences on popular streaming platforms (Chrome and Firefox), saving binge-watchers time.
+
+#### Why I Built This
+"I got tired of clicking 'Skip Intro' over and over when I'm watching shows. It's a small thing, but when you're binge-watching, you click it again and again. It breaks your focus and kills the vibe. So I built an extension that just does it for you automatically. Install it, turn it on, and forget about it. It finds the skip button and clicks it for you. No more reaching for your mouse. Those little clicks add up to real time saved when you're in the middle of a season."
+
+---
+
+### 4. Personal Blog
+- **Category**: Web App
+- **Live Demo**: https://blog.sourav.dev
+- **Source Code**: https://github.com/dsouravcom/personal-blog
+- **Project Detail Page**: https://sourav.dev/projects/personal-blog
+- **Metric**: Writing & tutorials
+- **Tech Stack**: Laravel
+- **Description**: A personal blog where Sourav shares technical articles, tutorials, experiences, and thoughts.
+
+#### Why I Built This
+"I wanted a place to write about things I learn, projects I work on, and ideas I have. Instead of posting random stuff on social media, I wanted my own space where I could share things properly without worrying about algorithms or trends. So I built this blog to share my thoughts and tutorials with people who might find them useful. It's just a simple place to write what's on my mind and hopefully help someone along the way."
+
+---
+
+### 5. URL Expander
+- **Category**: Web App / Utility
+- **Live Demo**: https://url.dsourav.com
+- **Source Code**: https://github.com/dsouravcom/url-expander
+- **Project Detail Page**: https://sourav.dev/projects/url-expander
+- **Metric**: 100+ users / month
+- **Tech Stack**: Next.js, Security, API, Utility
+- **Description**: A security tool to reveal the ultimate destination URL of a shortened URL before clicking, protecting users against phishing and malicious links.
+
+#### Why I Built This
+"I get shortened links all the time from people, but I never know where they actually go. They could be trying to trick me or lead me somewhere sketchy. That unknown feeling is annoying. So I built this tool to just show you where a shortened link really goes before you click it. It follows the link to the end and checks if it looks safe. Now you can peek at the destination first instead of just blindly clicking on something random someone sent you."
+
+---
+
+### 6. PocketUtils
+- **Category**: Web App / Utility
+- **Live Demo**: https://pocketutils.com
+- **Project Detail Page**: https://sourav.dev/projects/pocketutils
+- **Metric**: 100% client-side privacy-first
+- **Tech Stack**: Utility, Tools, Magic Link Authentication, Active Session Management
+- **Description**: A collection of small, useful online tools for everyday tasks. Includes XBEL file decryption, XBEL to HTML conversion, meta scanner, and SSL certificate scanner. All tools run directly in the browser with no data leaving the user's device.
+
+#### Why I Built This
+"I'm always looking for small tools online—things like converting files, checking SSL certificates, or scanning metadata. But every time I search, I end up on these slow websites covered in ads that want to track everything you do. So I built PocketUtils as a place where I can grab the tools I need without worrying. Everything runs in your browser, so nothing ever leaves your computer. Just simple, fast, and clean. No ads, no tracking, just tools that actually work."
+
+---
+
+## Social Links & Online Profiles
+
+- **GitHub**: https://github.com/dsouravcom
+- **LinkedIn**: https://www.linkedin.com/in/souravdotdev/
+- **Twitter / X**: https://x.com/souravdotdev
+- **Dev.to**: https://dev.to/dsourav
+- **Hashnode**: https://hashnode.com/@sourav-dutta
+- **Substack**: https://dsourav.substack.com/
+
+---
+
+## Contact Information
+
+- **Email**: hello@sourav.dev
+- **Location**: Kolkata, West Bengal, India
+- **Response Time**: Usually within ~24 hours

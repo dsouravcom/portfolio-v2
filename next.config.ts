@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
                     },
                     {
                         key: "Content-Security-Policy",
-                        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com; font-src 'self' data: https://cdn.fontshare.com; img-src 'self' data: blob: https://res.cloudinary.com https://img.icons8.com https://caption.dsourav.com; connect-src 'self' https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com;",
+                        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com; font-src 'self' data: https://cdn.fontshare.com; img-src 'self' data: blob: https://res.cloudinary.com https://img.icons8.com https://caption.dsourav.com; connect-src 'self' https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com https://event-store.sitebehaviour.com https://*.sitebehaviour.com;",
                     },
                 ],
             },

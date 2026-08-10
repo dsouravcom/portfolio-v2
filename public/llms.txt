@@ -1,0 +1,29 @@
+# Sourav Dutta
+
+> Full Stack Developer based in Kolkata, India. Specializes in building fast, privacy-focused, and robust web applications, browser extensions, and developer utilities using Next.js, Node.js, React, and MongoDB.
+
+## About & Experience
+
+- [Portfolio Home](https://sourav.dev): Official portfolio website of Sourav Dutta.
+- [GitHub](https://github.com/dsouravcom): Open-source projects and code repositories.
+- [LinkedIn](https://www.linkedin.com/in/souravdotdev/): Professional background and updates.
+- [Twitter / X](https://x.com/souravdotdev): Tech thoughts, project updates, and insights.
+- [Personal Blog](https://blog.sourav.dev): Articles, tutorials, and development thoughts.
+
+## Projects
+
+- [Caption Extractor](https://sourav.dev/projects/caption-extractor): Utility to extract and download Instagram captions. Live at https://caption.dsourav.com
+- [RojLekho (Daily Journal)](https://sourav.dev/projects/rojlekho): Secure, end-to-end encrypted private journaling app. Live at https://rojlekho.com
+- [Intro Skipper](https://sourav.dev/projects/intro-skipper): Browser extension to automatically skip intros on streaming platforms. Live at https://introskipper.dsourav.com
+- [URL Expander](https://sourav.dev/projects/url-expander): Security tool to expand and inspect shortened URLs. Live at https://url.dsourav.com
+- [PocketUtils](https://sourav.dev/projects/pocketutils): Collection of 100% client-side privacy-first web utilities. Live at https://pocketutils.com
+- [Personal Blog](https://sourav.dev/projects/personal-blog): Custom blog built to share web development articles and tutorials. Live at https://blog.sourav.dev
+
+## Contact
+
+- Email: hello@sourav.dev
+- Location: Kolkata, West Bengal, India
+
+## Optional
+
+- [Full Content](https://sourav.dev/llms-full.txt): Complete details of all projects, technical skills, background stories, and full page contents.
