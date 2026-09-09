@@ -1,9 +1,8 @@
 "use client";
 
 import { cn } from "@/app/lib/utils";
-import { EASE_OUT } from "@/app/lib/motion";
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 interface RevealProps {
     children: ReactNode;
@@ -11,13 +10,13 @@ interface RevealProps {
     delay?: number;
     y?: number;
     once?: boolean;
-    /** Reveal as soon as the top edge is ~100px into view. */
+    /** Reveal as soon as the top edge is ~80px into view. */
     margin?: string;
 }
 
 /**
- * Scroll-triggered fade + rise with the house easing. Movement is dropped
- * under prefers-reduced-motion (opacity is kept — it aids comprehension).
+ * Scroll-triggered fade + rise with the house easing. The hidden state lives
+ * in CSS behind `.js`, so the server HTML ships visible — see app/lib/boot.ts.
  */
 export function Reveal({
     children,
@@ -27,17 +26,51 @@ export function Reveal({
     once = true,
     margin = "-80px",
 }: RevealProps) {
-    const reduce = useReducedMotion();
+    const ref = useRef<HTMLDivElement>(null);
+    const [revealed, setRevealed] = useState(false);
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+
+        // No observer to drive the reveal — leave it to the boot failsafe.
+        if (typeof IntersectionObserver === "undefined") return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Cleared on delivery, not on mount: hydrating proves the bundle
+                // ran, but not that this observer will ever fire (it stays silent
+                // in contexts that never composite).
+                window.clearTimeout(window.__revealFailsafe);
+
+                if (entry.isIntersecting) {
+                    setRevealed(true);
+                    if (once) observer.disconnect();
+                } else if (!once) {
+                    setRevealed(false);
+                }
+            },
+            { rootMargin: margin },
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [once, margin]);
 
     return (
-        <motion.div
+        <div
+            ref={ref}
+            data-reveal=""
+            data-revealed={revealed || undefined}
+            style={
+                {
+                    "--reveal-y": `${y}px`,
+                    "--reveal-delay": `${delay}s`,
+                } as CSSProperties
+            }
             className={cn(className)}
-            initial={{ opacity: 0, y: reduce ? 0 : y }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once, margin: margin as never }}
-            transition={{ duration: 0.55, ease: EASE_OUT, delay }}
         >
             {children}
-        </motion.div>
+        </div>
     );
 }

@@ -2,15 +2,9 @@
 
 import { PORTFOLIO_DATA } from "@/app/data/portfolio";
 import { goToSection, openCommandPalette } from "@/app/lib/command";
-import { EASE_OUT } from "@/app/lib/motion";
-import {
-    motion,
-    useReducedMotion,
-    useSpring,
-    type Variants,
-} from "framer-motion";
+import { motion, useReducedMotion, useSpring } from "framer-motion";
 import { ArrowRight, Command } from "lucide-react";
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { Magnetic } from "./ui/Magnetic";
 import { SocialLinks } from "./SocialLinks";
 
@@ -19,6 +13,10 @@ const stats = [
     { value: "1K+", label: "Monthly active users" },
     { value: "∞", label: "Cups of chai" },
 ];
+
+/** Staggered entrance delay, applied by CSS so it survives a missing bundle. */
+const enter = (delay: number): CSSProperties =>
+    ({ "--enter-delay": `${delay}s` }) as CSSProperties;
 
 export function Hero() {
     const reduce = useReducedMotion();
@@ -55,15 +53,6 @@ export function Hero() {
         ry.set(0);
     };
 
-    const container: Variants = {
-        hidden: {},
-        show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-    };
-    const item: Variants = {
-        hidden: { opacity: 0, y: reduce ? 0 : 18 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT } },
-    };
-
     return (
         <section
             id="top"
@@ -79,13 +68,8 @@ export function Hero() {
 
             <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-12 lg:gap-8">
                 {/* Left — copy */}
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                    className="lg:col-span-7"
-                >
-                    <motion.div variants={item}>
+                <div className="lg:col-span-7">
+                    <div data-enter style={enter(0.05)}>
                         <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1.5 pl-2.5 pr-3.5 text-sm font-medium text-muted shadow-sm">
                             <span className="relative flex h-2 w-2">
                                 <span className="ping-ring absolute inline-flex h-full w-full rounded-full bg-accent/70" />
@@ -93,34 +77,38 @@ export function Hero() {
                             </span>
                             Available for new projects
                         </span>
-                    </motion.div>
+                    </div>
 
-                    <motion.p
-                        variants={item}
+                    <p
+                        data-enter
+                        style={enter(0.13)}
                         className="mt-8 font-mono text-sm uppercase tracking-[0.2em] text-accent"
                     >
                         Full-Stack Developer — Kolkata, India
-                    </motion.p>
+                    </p>
 
-                    <motion.h1
-                        variants={item}
+                    <h1
+                        data-enter
+                        style={enter(0.21)}
                         className="text-gradient mt-4 text-5xl font-semibold leading-[0.95] tracking-tight text-balance sm:text-6xl lg:text-7xl"
                     >
                         {PORTFOLIO_DATA.personal.name}
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        variants={item}
+                    <p
+                        data-enter
+                        style={enter(0.29)}
                         className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl"
                     >
                         I build fast, thoughtful web apps — from{" "}
                         <span className="text-ink">database to pixel</span> —
                         that people around the world{" "}
                         <span className="text-ink">actually use</span>.
-                    </motion.p>
+                    </p>
 
-                    <motion.div
-                        variants={item}
+                    <div
+                        data-enter
+                        style={enter(0.37)}
                         className="mt-9 flex flex-wrap items-center gap-3"
                     >
                         <Magnetic strength={0.4}>
@@ -144,10 +132,11 @@ export function Hero() {
                         >
                             Get in touch
                         </button>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        variants={item}
+                    <div
+                        data-enter
+                        style={enter(0.45)}
                         className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4"
                     >
                         <SocialLinks className="-ml-2" />
@@ -160,16 +149,21 @@ export function Hero() {
                             <span className="font-mono">K</span>
                             <span>to explore</span>
                         </button>
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
 
                 {/* Right — code card */}
-                <motion.div
-                    initial={{ opacity: 0, y: reduce ? 0 : 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.25 }}
+                <div
+                    data-enter
                     className="lg:col-span-5"
-                    style={{ perspective: 1000 }}
+                    style={
+                        {
+                            perspective: 1000,
+                            "--enter-y": "24px",
+                            "--enter-duration": "0.7s",
+                            "--enter-delay": "0.25s",
+                        } as CSSProperties
+                    }
                 >
                     <motion.div
                         ref={cardRef}
@@ -253,16 +247,20 @@ export function Hero() {
                             </div>
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </div>
 
             {/* scroll cue */}
-            <motion.button
+            <button
                 type="button"
                 onClick={() => goToSection("#work")}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
+                data-enter="fade"
+                style={
+                    {
+                        "--enter-duration": "0.8s",
+                        "--enter-delay": "1.2s",
+                    } as CSSProperties
+                }
                 aria-label="Scroll to work"
                 className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-faint transition-colors hover:text-muted md:flex"
             >
@@ -272,7 +270,7 @@ export function Hero() {
                 <span className="flex h-9 w-5 items-start justify-center rounded-full border border-line p-1">
                     <span className="h-1.5 w-1 animate-bounce rounded-full bg-faint" />
                 </span>
-            </motion.button>
+            </button>
         </section>
     );
 }

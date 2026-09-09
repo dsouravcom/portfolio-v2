@@ -1,17 +1,19 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 export default function NotFound() {
     return (
         <div className="flex min-h-screen flex-col items-center justify-center bg-canvas px-4 text-ink">
             <div className="grid-bg pointer-events-none absolute inset-0 opacity-60" />
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            <div
+                data-enter
+                style={
+                    {
+                        "--enter-y": "20px",
+                        "--enter-duration": "0.5s",
+                    } as CSSProperties
+                }
                 className="relative space-y-6 text-center"
             >
                 <p className="font-mono text-sm font-medium uppercase tracking-[0.2em] text-accent">
@@ -39,7 +41,7 @@ export default function NotFound() {
                         Back to home
                     </Link>
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 }

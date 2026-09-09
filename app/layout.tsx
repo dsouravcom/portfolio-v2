@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { CommandPalette } from "./components/CommandPalette";
 import { ScrollProgress } from "./components/ScrollProgress";
+import { jsInitScript } from "./lib/boot";
 import { themeInitScript } from "./lib/theme";
 import "./globals.css";
 
@@ -82,23 +83,16 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
-                {/* Set the theme class before paint to avoid a flash */}
+                {/* Theme class + JS flag, both before paint to avoid a flash */}
                 <script
-                    dangerouslySetInnerHTML={{ __html: themeInitScript }}
+                    dangerouslySetInnerHTML={{
+                        __html: themeInitScript + jsInitScript,
+                    }}
                 />
                 <link
                     href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
                     rel="stylesheet"
                 />
-                <noscript>
-                    <style>{`
-                        [style*="opacity: 0"], [style*="opacity:0"] {
-                            opacity: 1 !important;
-                            visibility: visible !important;
-                            transform: none !important;
-                        }
-                    `}</style>
-                </noscript>
             </head>
             <body className="antialiased">
                 <Script

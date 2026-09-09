@@ -1,9 +1,8 @@
 import { Project } from "@/app/data/portfolio";
-import { EASE_OUT } from "@/app/lib/motion";
 import { ArrowUpRight, ChevronLeft, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { MotionDiv } from "./ui/Motion";
+import type { CSSProperties } from "react";
 
 export function ProjectHeader({ project }: { project: Project }) {
     if (!project) return null;
@@ -11,10 +10,9 @@ export function ProjectHeader({ project }: { project: Project }) {
     return (
         <section className="px-6 pb-12 pt-28">
             <div className="mx-auto max-w-4xl">
-                <MotionDiv
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, ease: EASE_OUT }}
+                <div
+                    data-enter="slide"
+                    style={{ "--enter-duration": "0.5s" } as CSSProperties}
                 >
                     <Link
                         href="/#work"
@@ -26,12 +24,17 @@ export function ProjectHeader({ project }: { project: Project }) {
                         />
                         Back to work
                     </Link>
-                </MotionDiv>
+                </div>
 
-                <MotionDiv
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: EASE_OUT, delay: 0.05 }}
+                <div
+                    data-enter
+                    style={
+                        {
+                            "--enter-y": "20px",
+                            "--enter-duration": "0.5s",
+                            "--enter-delay": "0.05s",
+                        } as CSSProperties
+                    }
                     className="mb-12"
                 >
                     <div className="mb-4 flex flex-wrap items-center gap-3">
@@ -74,12 +77,17 @@ export function ProjectHeader({ project }: { project: Project }) {
                             </Link>
                         )}
                     </div>
-                </MotionDiv>
+                </div>
 
-                <MotionDiv
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: EASE_OUT, delay: 0.12 }}
+                <div
+                    data-enter
+                    style={
+                        {
+                            "--enter-y": "24px",
+                            "--enter-duration": "0.6s",
+                            "--enter-delay": "0.12s",
+                        } as CSSProperties
+                    }
                     className="relative mb-12 aspect-video w-full overflow-hidden rounded-2xl border border-line bg-canvas-subtle shadow-xl shadow-black/5"
                 >
                     {project.image && (
@@ -92,12 +100,16 @@ export function ProjectHeader({ project }: { project: Project }) {
                             sizes="(max-width: 1200px) 100vw, 1200px"
                         />
                     )}
-                </MotionDiv>
+                </div>
 
-                <MotionDiv
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, ease: EASE_OUT, delay: 0.2 }}
+                <div
+                    data-enter="fade"
+                    style={
+                        {
+                            "--enter-duration": "0.5s",
+                            "--enter-delay": "0.2s",
+                        } as CSSProperties
+                    }
                     className="flex flex-wrap gap-2 border-t border-line pt-8"
                 >
                     {project.tags?.map((tag) => (
@@ -108,7 +120,7 @@ export function ProjectHeader({ project }: { project: Project }) {
                             {tag}
                         </span>
                     ))}
-                </MotionDiv>
+                </div>
             </div>
         </section>
     );
