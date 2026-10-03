@@ -186,5 +186,16 @@ export const PORTFOLIO_DATA: {
             metric: "100% client-side",
             slug: "pocketutils",
         },
+        {
+            title: "Email Sandbox",
+            description:
+                "A safe SMTP testing platform for development and staging. Capture transactional emails in isolated inboxes, inspect HTML and plain text, and preview messages at desktop, tablet, and mobile widths without delivering them to real recipients.",
+            image: "https://email.dsourav.com/meta-image.webp",
+            demoLink: "https://email.dsourav.com",
+            tags: ["Angular", "NestJS", "PostgreSQL", "SMTP", "Drizzle ORM"],
+            category: "Web App",
+            metric: "100 test emails / month",
+            slug: "email-sandbox",
+        },
     ],
 };

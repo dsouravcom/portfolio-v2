@@ -17,6 +17,7 @@
 - [Intro Skipper](https://sourav.dev/projects/intro-skipper): Browser extension to automatically skip intros on streaming platforms. Live at https://introskipper.dsourav.com
 - [URL Expander](https://sourav.dev/projects/url-expander): Security tool to expand and inspect shortened URLs. Live at https://url.dsourav.com
 - [PocketUtils](https://sourav.dev/projects/pocketutils): Collection of 100% client-side privacy-first web utilities. Live at https://pocketutils.com
+- [Email Sandbox](https://sourav.dev/projects/email-sandbox): SMTP testing platform that captures transactional email in test inboxes for inspection without sending to real recipients. Live at https://email.dsourav.com
 - [Personal Blog](https://sourav.dev/projects/personal-blog): Custom blog built to share web development articles and tutorials. Live at https://blog.sourav.dev
 
 ## Contact

@@ -123,6 +123,18 @@ Key Highlights:
 
 ---
 
+### 7. Email Sandbox
+- **Category**: Web App / Developer Tool
+- **Live Demo**: https://email.dsourav.com
+- **Project Detail Page**: https://sourav.dev/projects/email-sandbox
+- **Metric**: 100 test emails per month on the Free plan
+- **Tech Stack**: Angular, NestJS, PostgreSQL, Drizzle ORM, SMTP
+- **Description**: An SMTP email testing platform for development and staging. It captures transactional emails in isolated inboxes instead of delivering them to real recipients. Developers can inspect HTML and plain-text bodies, headers, sender and recipient details, and preview messages at desktop, tablet, and mobile widths. Live inbox updates show newly captured messages without manual refresh.
+- **SMTP Endpoint**: smtp.email.dsourav.com:2525
+- **Attachment Handling**: Attachment names and metadata can be inspected; attachment file contents are discarded and are not downloadable.
+
+---
+
 ## Social Links & Online Profiles
 
 - **GitHub**: https://github.com/dsouravcom

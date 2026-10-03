@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "caption.dsourav.com",
             },
+            {
+                protocol: "https",
+                hostname: "email.dsourav.com",
+            },
         ],
     },
     headers: async () => {
